@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -laR | cut -d " " -f 11-11 | tr '/:' '\n' | sort
+find . -empty -printf "%f\n" | sort
