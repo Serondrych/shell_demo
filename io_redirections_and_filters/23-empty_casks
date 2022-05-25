@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -exec ls -laR {} + | cut -d " " -f2 | tr -d "./{dir}:" | sort
+ls -laR | cut -d " " -f 11-11 | tr '/:' '\n' | sort
