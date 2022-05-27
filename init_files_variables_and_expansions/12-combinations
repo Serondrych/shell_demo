@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s\n" {a..z}{a..z} | tr -d "oo" | uniq -c | sort -g | tr -s " " | cut -d" " -f3
+printf "%s\n" {a..z}{a..z} | uniq -c | sort -V |  tr -d "oo" | tr -s " " | cut -d" " -f3
