@@ -11,5 +11,5 @@ elif [ $((i % 3)) == 0 ]; then
 else
 	echo $i
 fi
-	((i++))
+	((i+=1))
 done
