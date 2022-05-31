@@ -6,8 +6,8 @@ while [ $hr -lt 13 ]; do
 	echo Hour: $hr
 	while [ $min -lt 60 ]; do
 		echo $min
-		let min+=1
+		(( min+=1 ))
 	done
-	let min=1
-	let hr+=1
+	(( min=1 ))
+	(( hr+=1 ))
 done
