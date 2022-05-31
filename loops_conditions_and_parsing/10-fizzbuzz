@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 10. FizzBuzz
-i=0
+i=1
 while [ $i -lt 101 ]; do
 	if [ $((i % 5)) == 0 ] && [ $((i % 3)) == 0 ]; then
 	echo "FizzBuzz"
