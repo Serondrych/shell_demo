@@ -13,8 +13,9 @@ for file in *; do
 	if [ -f "$file" ]; then
 		echo "school is a regular file"
 	fi
-	if [ "$found" -eq 0 ]; then
-		echo "school file does not exist"
 	fi
-fi
 done
+
+if [ "$found" -eq 0 ]; then
+	echo "school file does not exist"
+fi
