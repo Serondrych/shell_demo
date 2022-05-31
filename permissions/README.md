@@ -53,9 +53,9 @@ Filename: **7-everybody**
 ## 8. James Bond
 Write a script that sets the permission to the file hello as follows:
 
--Owner: no permission at all
--Group: no permission at all
--Other users: all the permissions
+- Owner: no permission at all
+- Group: no permission at all
+- Other users: all the permissions
 
 The file hello will be in the working directory You are not allowed to use commas for this script
 
@@ -70,3 +70,53 @@ Write a script that sets the mode of the file hello to this:
 - You are not allowed to use commas for this script
 
 Filename: **9-John_Doe**
+
+## 10. Look in the mirror
+Write a script that sets the mode of the file hello the same as olleh’s mode.
+
+- The file hello will be in the working directory
+- The file olleh will be in the working directory
+
+Note: the mode of olleh will not always be 664. Make sure your script works for any mode.
+
+Filename: **10-mirror_permissions**
+
+## 11. Directories
+Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users. Regular files should not be changed.
+
+Filename: **11-directories_permissions**
+
+## 12. More directories
+Create a script that creates a directory called my_dir with permissions 751 in the working directory.
+
+Filename: **12-directory_permissions**
+
+## 13. Change group
+Write a script that changes the group owner to school for the file hello
+
+- The file hello will be in the working directory
+
+Filename: **13-change_group**
+
+## 14. Owner and group
+Write a script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory.
+
+Filename: **14-change_owner_and_group**
+
+## 15. Symbolic links
+
+Write a script that changes the owner and the group owner of `_hello` to vincent and staff respectively.
+
+- The file `_hello` is in the working directory
+- The file `_hello` is a symbolic link
+
+Filename: **15-symbolic_link_permissions**
+
+## 16. If only
+Write a script that changes the owner of the file hello to vincent only if it is owned by the user guillaume.
+
+- The file hello will be in the working directory
+
+Filename: **16-if_only**
+
+# END
