@@ -10,3 +10,28 @@ Display the contents list of your current directory.
 
 Filename: 1-listit
 
+## 2. There is no place like home
+Write a script that changes the working directory to the user’s home directory.
+
+Filename: 2-bring_me_home
+
+## 3. The long format
+Display current directory contents in a long format
+
+Filename: 3-listfiles
+
+## 4. Hidden files
+Display current directory contents, including hidden files (starting with .). Use the long format.
+
+Filename: 4-listmorefiles
+
+## 5. I love numbers
+Display current directory contents.
+
+- Long format
+- with user and group IDs displayed numerically
+- And hidden files (starting with .)
+
+Filename: 5-listfilesdigitonly
+
+
