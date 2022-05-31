@@ -285,6 +285,7 @@ Write a script that changes the owner of the file `hello` to `vincent` only if i
 
 - The file `hello` will be in the working directory
 
+<!-- Result -->
 	
 	julien@ubuntu:/tmp/h$ ls -l
 	total 24
