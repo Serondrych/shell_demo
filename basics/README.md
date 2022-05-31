@@ -5,11 +5,9 @@ Write a script that prints the absolute path name of the current working directo
 
 Example:
 
-`$ ./0-current_working_directory
-
-/0x00-shell_basics
-
-$`
+	$ ./0-current_working_directory
+	/0x00-shell_basics
+	$
 
 Filename: 0-current_working_directory
 
