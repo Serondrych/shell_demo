@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Script that displays To infinity and beyond indefinitely. Sleeps between loops
+
+exit () {
+	echo "I hate the kill command"
+}
+
+love () {
+	echo "Y U no love me?!"
+}
+trap exit SIGTERM
+trap love SIGINT
+
+echo $(pgrep -a bash | grep "7-highlander" | awk '{print $1}') > myscript.pid
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
