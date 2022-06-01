@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 # Script that displays To infinity and beyond indefinitely. Sleeps between loops
-
 exit () {
 	echo "I hate the kill command";
-	rm /var/run/myscript.pid
+	rm myscript.pid;
+	pgrep -a bash | grep "10-process_and_pid_file" | awk '{print $1}' | xargs kill -9
 }
 
 love () {
 	echo "Y U no love me?!";
-	rm /var/run/myscript.pid
+	rm myscript.pid;
+	pgrep -a bash | grep "10-process_and_pid_file" | awk '{print $1}' | xargs kill -15
 }
 
 trap exit SIGTERM
 trap love SIGINT
 
-pgrep -a bash | grep "10-process_and_pid_file" | awk '{print $1}' > /var/run/myscript.pid
+pgrep -a bash | grep "10-process_and_pid_file" | awk '{print $1}' > myscript.pid
 while :
 do
 	echo "To infinity and beyond"
