@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #
-ps -eHo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command
+ps -efo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command
