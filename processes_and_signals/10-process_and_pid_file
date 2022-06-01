@@ -5,14 +5,13 @@ exit () {
 	rm /var/run/myscript.pid;
 	pkill -9 -f ".10-process_and_pid_file"
 }
-
 love () {
 	echo "Y U no love me?!";
 	pkill -15 -f ".10-process_and_pid_file"
 }
 quit () {	
 	rm /var/run/myscript.pid;
-	pkill -15 -f ".10-process_and_pid_file"
+	pkill -1 -f ".10-process_and_pid_file"
 }
 
 trap exit SIGTERM
