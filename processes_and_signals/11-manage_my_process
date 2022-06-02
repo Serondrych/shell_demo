@@ -7,7 +7,7 @@ startit () {
 		exit;
 	}
 stopit () {
-		rm /var/run/my_process.pid:
+		rm /var/run/my_process.pid;
 		pkill -f "./manage_my_process";
 		echo "manage_my_process stopped";
 		exit;
@@ -25,7 +25,5 @@ case "$1" in
 	start ) startit ;;
 	stop ) stopit ;;
 	restart ) restartit;;
-	* )
-		echo "Usage: manage_my_process {start|stop|restart}"
-		;;
+	* ) echo "Usage: manage_my_process {start|stop|restart}" ;;
 esac
