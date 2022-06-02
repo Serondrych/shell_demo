@@ -7,8 +7,8 @@ startit () {
 		echo "manage_my_process started"
 	}
 stopit () {
-		$rmlog
 		pkill -f "./manage_my_process"
+		$rmlog
 		echo "manage_my_process stopped"
 	}
 restartit () {
