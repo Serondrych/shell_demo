@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Manage processes
-rmlog="rm /var/run/my_process.pid"
 startit () {
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
@@ -8,12 +7,15 @@ startit () {
 	}
 stopit () {
 		pkill -f "./manage_my_process"
-		$rmlog
+		sleep 2
+		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
 	}
 restartit () {
 		pkill -f "./manage_my_process"
 		./manage_my_process &
+		sleep 2
+                rm /var/run/my_process.pid
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
 	}
