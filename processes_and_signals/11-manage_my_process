@@ -6,6 +6,7 @@ startit () {
 		echo "manage_my_process started"
 	}
 stopit () {
+		sudo rm "/var/run/my_process.pid"
 		pkill -f "./manage_my_process"
 		echo "manage_my_process stopped"
 	}
