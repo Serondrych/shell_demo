@@ -12,7 +12,7 @@ stopit () {
 		echo "manage_my_process stopped"
 	}
 restartit () {
-		pkill -f "./manage_my_process"
+		pkill -f -15 "./manage_my_process"
 		sleep 2
                 rm /var/run/my_process.pid
 		./manage_my_process &
