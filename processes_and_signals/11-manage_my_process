@@ -11,10 +11,10 @@ stopit () {
 		kill "$(rm -r $file)"
 	}
 restartit () {
+		kill "$(rm -r $file)"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
-		kill "$(rm -r $file)"
 	}
 
 case "$1" in
