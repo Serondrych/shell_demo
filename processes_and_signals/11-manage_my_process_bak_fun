@@ -1,24 +1,27 @@
 #!/usr/bin/env bash
 # Manage processes
-case "$1" in
-	start ) 
+rmlog=/var/run/my_process.pid
+startit () {
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process started"
-		;;
-	stop )
-		find /var/run/ -name my_process.pid -delete
-		pkill -f "./manage_my_process"
+	}
+stopit () {
+		kill "$( cat "$rmlog" )"
 		echo "manage_my_process stopped"
-		;;
-	restart )
-		find /var/run/ -name my_process.pid -delete
-		pkill -f "./manage_my_process"
+		rm -r $rmlog
+	}
+restartit () {
+		kill "$( cat "$rmlog" )"
+		rm -r $rmlog
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
-		;;
-	* )
-		echo "Usage: manage_my_process {start|stop|restart}"
-		;;
+	}
+
+case $1 in
+	start ) startit ;;
+	stop ) stopit ;;
+	restart ) restartit ;;
+	* ) echo "Usage: manage_my_process {start|stop|restart}" ;;
 esac
