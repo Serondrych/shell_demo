@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Manage processes
+rmlog="rm /var/run/my_process.pid"
 startit () {
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process started"
 	}
 stopit () {
-		sudo rm "/var/run/my_process.pid"
+		echo $rmlog
 		pkill -f "./manage_my_process"
 		echo "manage_my_process stopped"
 	}
