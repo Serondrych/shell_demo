@@ -11,7 +11,7 @@ love () {
 	echo "Y U no love me?!";
 	pkill -15 -f ".10-process_and_pid_file"
 }
-quit () {	
+quit () {
 	rm /var/run/myscript.pid;
 	pkill -1 -f ".10-process_and_pid_file"
 }
