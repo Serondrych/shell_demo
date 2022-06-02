@@ -7,15 +7,15 @@ startit () {
 	}
 stopit () {
 		pkill -f "./manage_my_process"
-		sleep 2
+		sleep 10
 		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
 	}
 restartit () {
 		pkill -f "./manage_my_process"
-		sleep 2
+		sleep 10
                 rm /var/run/my_process.pid
-		sleep 2
+		sleep 10
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
