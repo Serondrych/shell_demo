@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Script that displays To infinity and beyond indefinitely. Sleeps between loops
 
-trap 'echo "I hate the kill command"; rm /var/run/myscript.pid; pkill -9 -f ".10-process_and_pid_file"; exit'
+trap 'echo I hate the kill command; rm /var/run/myscript.pid; pkill -9 -f ".10-process_and_pid_file"; exit'
 
-trap 'echo "Y U no love me?!"; pkill -15 -f ".10-process_and_pid_file"'
+trap 'echo Y U no love me?!; pkill -15 -f ".10-process_and_pid_file"'
 
 trap 'rm /var/run/myscript.pid; pkill -1 -f ".10-process_and_pid_file"; exit'
 
