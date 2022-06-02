@@ -13,9 +13,9 @@ stopit () {
 	}
 restartit () {
 		pkill -f "./manage_my_process"
-		./manage_my_process &
 		sleep 2
                 rm /var/run/my_process.pid
+		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
 	}
