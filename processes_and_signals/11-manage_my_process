@@ -6,15 +6,16 @@ startit () {
 		echo "manage_my_process started"
 	}
 stopit () {
-		pkill -f -9 "./manage_my_process"
+		pkill -f "./manage_my_process"
 		sleep 2
 		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
 	}
 restartit () {
-		pkill -f -15 "./manage_my_process"
+		pkill -f "./manage_my_process"
 		sleep 2
                 rm /var/run/my_process.pid
+		sleep 2
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
