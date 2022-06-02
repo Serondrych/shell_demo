@@ -22,6 +22,6 @@ restartit () {
 case "$1" in
 	start ) startit ;;
 	stop ) stopit ;;
-	restart ) restartit;;
+	restart ) restartit ;;
 	* ) echo "Usage: manage_my_process {start|stop|restart}" ;;
 esac
