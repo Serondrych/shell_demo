@@ -8,8 +8,8 @@ startit () {
 	}
 stopit () {
 		kill "$( cat "$rmlog" )"
-		rm -r $rmlog
 		echo "manage_my_process stopped"
+		rm -r $rmlog
 	}
 restartit () {
 		kill "$( cat "$rmlog" )"
