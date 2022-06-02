@@ -8,13 +8,13 @@ case $1 in
 		echo "manage_my_process started"
 		;;
 	stop )
-		kill "$( cat "$rmlog" )"
+		kill "$( cat $rmlog )"
 		echo "manage_my_process stopped"
-		rm -r $rmlog
+		rm -r "$rmlog"
 		;;
 	restart )
-		kill "$( cat "$rmlog" )"
-		rm -r $rmlog
+		kill "$( cat $rmlog )"
+		rm -r "$rmlog"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
