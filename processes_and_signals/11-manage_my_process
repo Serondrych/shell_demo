@@ -3,21 +3,21 @@
 i=1
 case "$i" in
 	"start" ) 
+		echo "manage_my_process started"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/myprocess.pid
-		echo "manage_my_process started"
 		;;
 	"stop" )
+		echo "manage_my_process stopped"
 		pkill -f "./manage_my_process"
 		rm /var/run/my_process.pid
-		echo "manage_my_process stopped"
 		;;
 	"restart" )
+		echo "manage_my_process restarted"
 		pkill -f "./manage_my_process"
 		rm /var/run/my_process.pid
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/myprocess.pid
-		echo "manage_my_process restarted"
 		;;
 	* )
 		echo "Usage: manage_my_process {start|stop|restart}"
