@@ -7,8 +7,8 @@ startit () {
 		echo "manage_my_process started"
 	}
 stopit () {
-		echo "manage_my_process stopped"
 		kill "$(rm -r $file)"
+		echo "manage_my_process stopped"
 	}
 restartit () {
 		kill "$(rm -r $file)"
