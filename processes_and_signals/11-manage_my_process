@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 # Script that displays To infinity and beyond indefinitely. Sleeps between loops
-i=1
-case "$i" in
-	"start" ) 
+
+case "$1" in
+	start ) 
 		echo "manage_my_process started"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/myprocess.pid
 		;;
-	"stop" )
+	stop )
 		echo "manage_my_process stopped"
 		pkill -f "./manage_my_process"
 		rm /var/run/my_process.pid
 		;;
-	"restart" )
+	restart )
 		echo "manage_my_process restarted"
 		pkill -f "./manage_my_process"
 		rm /var/run/my_process.pid
