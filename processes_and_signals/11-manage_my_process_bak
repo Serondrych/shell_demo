@@ -1,27 +1,23 @@
 #!/usr/bin/env bash
 # Manage processes
-startit () {
+case "$1" in
+	start ) 
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process started"
-	}
-stopit () {
-		rm /var/run/my_process.pid
+		;;
+	stop )
+		find /var/run/ -name my_process.pid -delete
 		pkill -f "./manage_my_process"
 		echo "manage_my_process stopped"
-	}
-restartit () {
+		;;
+	restart )
 		find /var/run/ -name my_process.pid -delete
 		pkill -f "./manage_my_process"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
-	}
-
-case "$1" in
-	start ) startit ;;
-	stop ) stopit ;;
-	restart ) restartit;;
+		;;
 	* )
 		echo "Usage: manage_my_process {start|stop|restart}"
 		;;
