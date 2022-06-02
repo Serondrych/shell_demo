@@ -17,6 +17,7 @@ case "$1" in
 		echo "manage_my_process restarted"
 		pkill -f "./manage_my_process"
 		rm /var/run/my_process.pid
+		exit
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/myprocess.pid
 		;;
