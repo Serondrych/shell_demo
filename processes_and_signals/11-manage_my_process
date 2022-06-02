@@ -10,12 +10,12 @@ case "$1" in
 	stop )
 		echo "manage_my_process stopped"
 		pkill -f "./manage_my_process"
-		sudo rm /var/run/my_process.pid
+		rm "/var/run/my_process.pid"
 		;;
 	restart )
 		echo "manage_my_process restarted"
 		pkill -f "./manage_my_process"
-		sudo rm /var/run/my_process.pid
+		rm "/var/run/my_process.pid"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/myprocess.pid
 		;;
