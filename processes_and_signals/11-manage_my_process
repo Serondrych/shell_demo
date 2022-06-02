@@ -3,21 +3,21 @@
 
 case "$1" in
 	start ) 
-		echo "manage_my_process started"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
+		echo "manage_my_process started"
 		;;
 	stop )
-		echo "manage_my_process stopped"
-		rm /var/run/my_process.pid
+		sudo rm /var/run/my_process.pid
 		pkill -f "./manage_my_process"
+		echo "manage_my_process stopped"
 		;;
 	restart )
-		echo "manage_my_process restarted"
-		rm /var/run/my_process.pid
+		sudo rm /var/run/my_process.pid
 		pkill -f "./manage_my_process"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
+		echo "manage_my_process restarted"
 		;;
 	* )
 		echo "Usage: manage_my_process {start|stop|restart}"
