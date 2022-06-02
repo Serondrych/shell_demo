@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Manage processes
-rm /var/run/my_process.pid
 startit () {
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
@@ -25,3 +24,4 @@ case "$1" in
 	restart ) restartit;;
 	* ) echo "Usage: manage_my_process {start|stop|restart}" ;;
 esac
+rm /var/run/my_process.pid
