@@ -22,6 +22,7 @@ case "$1" in
 	start ) startit ;;
 	stop ) stopit ;;
 	restart ) restartit;;
-	* ) echo "Usage: manage_my_process {start|stop|restart}" ;;
+	* )
+		echo "Usage: manage_my_process {start|stop|restart}"
+		rm /var/run/my_process.pid ;;
 esac
-rm /var/run/my_process.pid
