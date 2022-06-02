@@ -7,11 +7,13 @@ startit () {
 		echo "manage_my_process started"
 	}
 stopit () {
-		kill "$(rm -r $file)"
+		kill "$( cat  $file )"
+		rm -r $file
 		echo "manage_my_process stopped"
 	}
 restartit () {
-		kill "$(rm -r $file)"
+		kill "$( cat  $file )"
+		rm -r $file
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
