@@ -4,7 +4,7 @@
 hate () {
 	echo "I hate the kill command";
 	rm /var/run/myscript.pid;
-	pkill -9 -f ".10-process_and_pid_file"
+	pkill -9 -f ".10-process_and_pid_file";
 	exit
 }
 love () {
@@ -13,7 +13,8 @@ love () {
 }
 quit () {
 	rm /var/run/myscript.pid;
-	pkill -1 -f ".10-process_and_pid_file"
+	pkill -1 -f ".10-process_and_pid_file";
+	exit
 }
 
 trap hate SIGTERM
