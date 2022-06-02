@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Script that displays To infinity and beyond indefinitely. Sleeps between loops
+i=1
+while [ $i ]; do
+echo $i
+case "$i" in
+	"start" ) 
+		./manage_my_process &
+		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > myprocess.pid
+		echo "manage_my_process started"
+		;;
+	"stop" )
+		pkill -f "./manage_my_process"
+		rm my_process
+		echo "manage_my_process stopped"
+		;;
+	"restart" )
+		pkill -f "./manage_my_process"
+		rm my_process
+		./manage_my_process &
+		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > myprocess.pid
+		echo "manage_my_process restarted"
+		;;
+esac
+done

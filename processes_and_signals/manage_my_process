@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script that displays To infinity and beyond indefinitely. Sleeps between loops
+while :
+do
+	echo "I am alive!" >> my_process
+	sleep 2
+done
