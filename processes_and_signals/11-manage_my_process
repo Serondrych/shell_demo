@@ -11,7 +11,7 @@ stopit () {
 		echo "manage_my_process stopped"
 	}
 restartit () {
-		find /var/run/ -name my_process.pid -delete
+		rm /var/run/my_process.pid
 		pkill -f "./manage_my_process"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
