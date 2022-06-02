@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 # Manage processes
+file=/var/run/my_process.pid
 startit () {
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process started"
 	}
 stopit () {
-		pkill -f "./manage_my_process"
 		echo "manage_my_process stopped"
-		rm -r /var/run/my_process.pid
+		kill "$(rm -r $file)"
 	}
 restartit () {
-		pkill -f "./manage_my_process"
 		./manage_my_process &
 		pgrep -a bash | grep "manage_my_process" | awk '{print $1}' > /var/run/my_process.pid
 		echo "manage_my_process restarted"
-                rm -r /var/run/my_process.pid
+		kill "$(rm -r $file)"
 	}
 
 case "$1" in
