@@ -1,2 +1,0 @@
-#!/bin/bash
-grep -wv -e "bin" -e "sbin" /etc/passwd

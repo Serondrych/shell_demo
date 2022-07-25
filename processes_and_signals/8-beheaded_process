@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Script to kill 7-highlander process
-pgrep -a bash | grep "7-highlander" | awk '{print $1}' | xargs kill -9

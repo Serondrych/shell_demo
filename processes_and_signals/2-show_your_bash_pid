@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Sscript that displays lines containing the bash word
-# shellcheck disable=SC2009
-ps -efxo user,pid,pcpu,pmem,vsz,rss,tty,stat,start_time,time,command | grep "bash"
