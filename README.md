@@ -22,28 +22,28 @@ Program is compiled on Ubuntu 20.04 LTS with the following command:
 
 ## EXAMPLE
 
------Interactive mode:-----
+Interactive mode:
 
-.I $ ./hsh
-.I ($) /bin/ls
-.I hsh main.c shell.c
-.I ($)
-.I ($) exit
-.I $
+$ ./hsh
+$ /bin/ls
+simple_shell  main.c shell.c
+$
+$ exit
+$
 
------Non-interactive mode:-----
+Non-interactive mode:
 
-.I $ echo "/bin/ls" | ./hsh
-.I hsh main.c shell.c test_ls_2
-.I $
-.I $ cat test_ls_2
-.I /bin/ls
-.I /bin/ls
-.I $
-.I $ cat test_ls_2 | ./hsh
-.I hsh main.c shell.c test_ls_2
-.I hsh main.c shell.c test_ls_2
-.I $
+$ echo "/bin/ls" | ./simple_shell
+simple_shell main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+simple_shell main.c shell.c test_ls_2
+simple_shell main.c shell.c test_ls_2
+$
 
 ## FLOWCHART
 
